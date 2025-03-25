@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+    <student>
+        <enrolmentNumber>20220001</enrolmentNumber>
+        <name>Maan</name>
+        <mobileNumber>9876543210</mobileNumber>
+        <emailId>maan45.86@gmail.com</emailId>
+    </student>
+
+    <student>
+        <enrolmentNumber>20220002</enrolmentNumber>
+        <name>Ram</name>
+        <mobileNumber>8765432109</mobileNumber>
+        <emailId>ram658.25@gmail.com</emailId>
+    </student>
+
+    <student>
+        <enrolmentNumber>20220003</enrolmentNumber>
+        <name>James</name>
+        <mobileNumber>7654321098</mobileNumber>
+        <emailId>783.48james@gmail.com</emailId>
+    </student>
+</students>
