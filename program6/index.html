@@ -136,31 +136,25 @@
 
     <script>
         function validateAndDisplay() {
-            // Reset error messages
             document.getElementById('nameError').textContent = '';
             document.getElementById('emailError').textContent = '';
             document.getElementById('mobileError').textContent = '';
             document.getElementById('genderError').textContent = '';
 
-            // Get form values
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const mobile = document.getElementById('mobile').value.trim();
             const gender = document.querySelector('input[name="gender"]:checked').value;
             const color = document.getElementById('color').value;
-            
-            // Color name mapping (simplified)
+           
             const colorNames = {
                 '#ff0000': 'Red',
                 '#00ff00': 'Green',
                 '#0000ff': 'Blue',
-                // Add more colors as needed
             };
             
-            // Get color name or use hex value
             const colorName = colorNames[color.toLowerCase()] || color;
 
-            // Validation flags
             let isValid = true;
 
             // Name validation
@@ -192,32 +186,25 @@
                 isValid = false;
             }
 
-            // If validation passed, display the information
             if (isValid) {
                 const resultText = `Name: ${name}\nEmail: ${email}\nMobile No: ${mobile}\nGender: ${gender}\nFavourite Colour: ${colorName}`;
                 document.getElementById('result').value = resultText;
                 
-                // Optional: Show color visually
                 document.getElementById('result').style.backgroundColor = color;
                 document.getElementById('result').style.color = getContrastColor(color);
             }
         }
 
-        // Helper function to determine text color based on background color
         function getContrastColor(hexColor) {
-            // Convert hex to RGB
             const r = parseInt(hexColor.substr(1, 2), 16);
             const g = parseInt(hexColor.substr(3, 2), 16);
             const b = parseInt(hexColor.substr(5, 2), 16);
             
-            // Calculate luminance
             const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
             
-            // Return black or white depending on luminance
             return luminance > 0.5 ? '#000000' : '#ffffff';
         }
 
-        // Optional: Add event listener for Enter key
         document.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 validateAndDisplay();

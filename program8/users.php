@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>User Data from Text File</title>
+    <title>User Data</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,35 +33,28 @@
     <h1>User Data from Text File</h1>
     
     <?php
-    $filename = 'users.txt'; // Change this to your file path
+    $filename = 'users.txt';
     
-    // Check if file exists
     if (!file_exists($filename)) {
         echo '<p class="error">Error: The file ' . htmlspecialchars($filename) . ' does not exist.</p>';
     } else {
-        // Read the file
         $lines = file($filename, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         
         if (empty($lines)) {
             echo '<p>No data found in the file.</p>';
         } else {
-            // Start the table
             echo '<table>';
             echo '<thead><tr><th>Name</th><th>Password</th><th>Email</th></tr></thead>';
             echo '<tbody>';
-            
-            // Process each line
+           
             foreach ($lines as $line) {
-                // Split the line into parts
                 $parts = explode(':', $line);
                 
-                // Make sure we have exactly 3 parts (Name, Password, Email)
                 if (count($parts) >= 3) {
                     $name = trim($parts[0]);
                     $password = trim($parts[1]);
                     $email = trim($parts[2]);
-                    
-                    // Display the data in a table row
+                   
                     echo '<tr>';
                     echo '<td>' . htmlspecialchars($name) . '</td>';
                     echo '<td>' . htmlspecialchars($password) . '</td>';
