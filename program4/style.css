@@ -1,0 +1,67 @@
+body {
+  margin: 0.3%;
+  padding: 0.3%;
+}
+
+.page-border {
+  border: 2px solid rgb(153, 54, 54);
+  border-radius: 10px;
+  min-height: 96vh;
+  position: relative;
+}
+
+.container {
+  background-image: url("assets/VIPS_Carousel_8HCZsDJq2yxnZlKJfiBz.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  height: 96vh;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+  padding-bottom: 20px;
+}
+
+.menu {
+  display: flex;
+  column-gap: 30px;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: rgb(255, 255, 255);
+  height: 30px;
+  color: rgb(153, 54, 54);
+}
+
+.menu a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.main-content {
+  height: 72vh;
+  overflow-y: scroll;
+}
+
+.courses {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+  align-items: center;
+  justify-items: center;
+  margin: 20px;
+}
+
+.courses div {
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out;
+}
